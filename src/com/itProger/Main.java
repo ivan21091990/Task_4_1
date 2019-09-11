@@ -18,21 +18,15 @@ public class Main {
 	     System.out.println("Первоначальный массив: " + Arrays.toString(array));
 	for (int j =0; j<array.length; j++){
 	    if(array[j]<0){
-	        if (array[j]<array[maxNegative]){
+	        if (array[j]>array[maxNegative] || array[maxNegative] > 0){
 	        maxNegative = j;
-        }
-	        else if (array[maxNegative]>= 0){
-            maxNegative = j;
         }
         }
 	    else if (array[j]>0){
-	        if (array[j]<array[minPositive]){
+	        if (array[j]<array[minPositive] || array[minPositive] < 0){
 	            minPositive = j;
 	        }
-	        else if (array[minPositive]<=0){
-	            minPositive = j;
-            }
-        }
+	    }
         }
         int x = array[maxNegative];
         array[maxNegative] = array[minPositive];
